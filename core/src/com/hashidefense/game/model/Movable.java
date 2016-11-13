@@ -1,9 +1,11 @@
 package com.hashidefense.game.model;
 
+import com.badlogic.gdx.Gdx;
+
 /**
  * Created by Florian on 13.11.2016.
  */
-public abstract class Movable implements Paintable{
+public abstract class Movable implements Paintable {
     private Direction direction;
     private double currentX;
     private double currentY;
@@ -36,12 +38,12 @@ public abstract class Movable implements Paintable{
         this.direction = direction;
     }
 
-    public void changeSpeed(double difference){
+    public void changeSpeed(double difference) {
         currentSpeed = Math.max(0, currentSpeed + difference);
     }
 
-    public void move(){
-        switch (direction){
+    public void move() {
+        switch (direction) {
             case UP:
                 currentY += currentSpeed;
                 break;
@@ -55,5 +57,7 @@ public abstract class Movable implements Paintable{
                 currentX += currentSpeed;
                 break;
         }
+        Gdx.app.debug("Movable#move()", String.format("Moving to (%d, %d) ", getPosX(), getPosY()));
+
     }
 }

@@ -1,10 +1,11 @@
 package com.hashidefense.game.model;
 
+import com.hashidefense.game.visitors.PaintableVisitor;
+
 /**
  * Created by Florian on 13.11.2016.
  */
 
 public interface Paintable {
-    int getPosX();
-    int getPosY();
+    void accept(PaintableVisitor visitor);
 }
