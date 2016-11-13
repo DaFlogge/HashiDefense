@@ -6,7 +6,7 @@ package com.hashidefense.game.model;
 
 public class WaypointNode extends Node {
     private final Direction direction;
-    protected WaypointNode(int posX, int posY, Direction direction) {
+    protected WaypointNode(int posX, int posY, Direction direction, Waypoint type) {
         super(posX, posY);
         this.direction = direction;
     }
